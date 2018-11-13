@@ -12,7 +12,7 @@
 
 ## Installation
 ```sh
-curl https://raw.githubusercontent.com/chevalvert/rythmus-assistant/master/scripts/install.sh | sudo bash
+curl https://raw.githubusercontent.com/chevalvert/rythmus-assistant/master/scripts/install.sh | bash
 ```
 
 ## Usage
