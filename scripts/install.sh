@@ -87,6 +87,7 @@ setup () {
     echo
     echo "Cloning $REPO..."
     git clone --depth=1 "${REMOTE}" "${DEST}" || return $?
+    rm -rf $DEST/.git
 
     echo
     echo "Installing $REPO..."
