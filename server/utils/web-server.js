@@ -22,7 +22,7 @@ module.exports = options => {
     const url = `http://${address}:${options.port}`
 
     if (options['auto-open']) opn(url)
-    console.log(`listenning to ${url}`)
+    console.log(`listening to ${url}`)
   })
 
   const em = new Emitter()

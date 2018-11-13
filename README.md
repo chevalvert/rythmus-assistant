@@ -5,7 +5,7 @@
 
 ## **[Rythmus](https://github.com/chevalvert?q=rythmus)** ecosystem
 - [`rythmus`](https://github.com/chevalvert/rythmus) : Rythmus main app
-- `stratum-assistant` : Rythmus mapping and configuration assistant
+- `rythmus-assistant` : Rythmus mapping and configuration assistant
 - [`hemisphere-project/stratum-hnode#rythmus`](https://github.com/Hemisphere-Project/stratum-hnode/tree/rythmus) : leds UDP server & client
 - [`rythmus-viewer`](https://github.com/chevalvert/rythmus-viewer) : Rythmus `hnode` 3D previewer
 - [`rythmus-sensor`](https://github.com/chevalvert/rythmus-sensor) : Rythmus heart sensor firmware
@@ -40,7 +40,13 @@ Standby Mode:
 ```
 <sup>See [`.apprc`](.apprc) and the [`rc` package](https://github.com/dominictarr/rc#standards) for advanced options.</sup>
 
-## Connection
+### Allowing `rythmus-assistant` to reboot system
+
+`rythmus-assistant` makes use of `osascript` to handle system reboot on `Darwin` platforms. This means that `rythmus-assistant` on **macOS** can natively reboot the system when asked to.
+
+On other platforms however (namely **Windows** & **Linux**), you will need to run `rythmus-assistant` with root privileges, by either calling `sudo rythmus-assistant` or by adding it to [sudoers](https://www.sudo.ws/man/1.8.17/visudo.man.html).
+
+### Connection
 To connect to Rythmus via UDP, use the following IPV4 config:
 ```
 IP Address  : 192.168.0.200
@@ -49,18 +55,20 @@ Router      : 192.168.0.1
 ```
 
 ## Development
+
+### Installation
 ```sh
 git clone https://github.com/chevalvert/rythmus.git rythmus-assistant
 cd rythmus-assistant
 npm run install
 ```
 
-###### Client
+### Client
 ```sh
 npm run start
 ```
 
-###### Server
+### Server
 ```sh
 node server --standby --viewer=<path to rythmus-viewer applet>
 ```
