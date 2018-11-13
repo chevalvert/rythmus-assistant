@@ -1,0 +1,19 @@
+rythmus-assistant
+
+Usage:
+  rythmus-assistant --standby --output=<path>
+  rythmus-assistant --help
+  rythmus-assistant --version
+
+Options:
+  -h, --help              Show this screen.
+  -v, --version           Print the current version.
+  --standby               Run in standby mode.
+  --output=<path>         Set the destination of the mapping file.
+  --viewer=<path>         Open rythmus-viewer as a previewer.
+
+Standby Mode:
+  In standby mode, rythmus-assistant will wait for user input before
+  trying to connect to ryhmus.
+  This is the preferred mode when run in production, as both rythmus-app
+  and rythmus-assistant can run in parallel.

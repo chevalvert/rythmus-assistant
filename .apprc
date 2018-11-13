@@ -1,0 +1,22 @@
+{
+  "output": "mapping.json",
+  "standby": false,
+
+  "web-server": {
+    "auto-open": false,
+    "port": 8888,
+    "public": "build"
+  },
+  "hnode": {
+    "PORT_SERVER": 3737,
+    "TIME_TICK": 100,
+    "TIME_OFFLINE": 1000,
+    "TIME_GONE": 3000,
+    "NLEDS_STRIPS": 178,
+    "NSTRIPS_CLIENT": 4,
+    "CLIENT_FRAME_RATE": 60,
+    "CORRECT_VOLTAGE_DROP": false
+  },
+
+  "viewer": null
+}

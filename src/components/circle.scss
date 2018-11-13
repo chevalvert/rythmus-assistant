@@ -1,0 +1,51 @@
+$rect-size: 3rem;
+
+svg.circle {
+  position: fixed;
+  top: calc(50% - #{$rect-size});
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  width: 100vmin;
+  height: 100vmin;
+
+  padding: 5rem;
+
+  line {
+    stroke: $gray;
+    stroke-width: 1px;
+  }
+
+  .circle-point {
+    width: $rect-size;
+    height: $rect-size;
+
+    fill: $gray;
+    @include easing(200ms, fill);
+
+    &.was-not-validated { fill: mix($red, $gray, 30%); }
+
+    &:hover {
+      fill: $black;
+      cursor: pointer;
+    }
+
+    &.is-mapped { fill: $yellow; }
+    &.is-active {
+      fill: $black;
+      animation: pulse 500ms infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease-in-out;
+    }
+    &.is-validated { fill: $green; }
+    &.is-not-validated { fill: $red; }
+    &.is-disabled { pointer-events: none; }
+  }
+
+  rect.circle-point {
+    width: $rect-size * 0.75;
+    height: $rect-size * 0.75;
+    $margin: ($rect-size * 0.75) / 2;
+    transform: translate(-$margin, -$margin);
+  }
+}
