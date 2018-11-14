@@ -14,6 +14,6 @@ Options:
 
 Standby Mode:
   In standby mode, rythmus-assistant will wait for user input before
-  trying to connect to ryhmus.
+  trying to connect to rythmus.
   This is the preferred mode when run in production, as both rythmus-app
   and rythmus-assistant can run in parallel.
