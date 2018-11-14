@@ -10,7 +10,9 @@ const defaultConfig = JSON.parse(fs.readFileSync(defaultConfigPath, 'utf-8'))
 const configuration = require('rc')(appname, defaultConfig)
 
 configuration.output = path.resolve(configuration.output)
-configuration['web-server'].public = path.resolve(configuration['web-server'].public)
+configuration['web-server'].public = path.isAbsolute(configuration['web-server'].public)
+  ? configuration['web-server'].public
+  : path.resolve(__dirname, '..', configuration['web-server'].public)
 configuration.appname = appname
 configuration.package = pckg
 configuration.help = configuration.help || configuration.h
