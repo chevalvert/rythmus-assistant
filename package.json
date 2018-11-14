@@ -1,6 +1,6 @@
 {
   "name": "rythmus-assistant",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "rythmus mapping and configuration assistant",
   "bin": {
     "rythmus-assistant": "server/index.js"
