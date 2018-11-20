@@ -20,7 +20,7 @@ configuration.version = configuration.version || configuration.v
 
 // Show help
 if (configuration.help) {
-  console.log(fs.readFileSync(path.join(__dirname, 'usage.txt'), 'utf-8'))
+  console.log(fs.readFileSync(path.join(__dirname, 'USAGE'), 'utf-8'))
   process.exit(0)
 }
 
