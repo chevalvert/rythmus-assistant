@@ -19,7 +19,7 @@ kill(process.title).then(() => {
 
   // RX
   // NOTE: reboot callback is called only when reboot as failed
-  web.on('reboot', () => reboot(err => { throw err }))
+  web.on('reboot', () => reboot(err => { if (err) throw err }))
   web.on('blackout', () => hnodeServer.blackout())
   web.on('light:all', () => hnodeServer.setAll([255, 255, 255]))
   web.on('light', data => {
